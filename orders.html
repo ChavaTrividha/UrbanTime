@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Orders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h2 style="color: white;">My Orders</h2>
+  </header>
+
+  <section class="cart-section">
+    <div class="cart-grid" id="orders-container"></div>
+  </section>
+
+  <script>
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    const container = document.getElementById("orders-container");
+  
+    function displayOrders() {
+      if (orders.length === 0) {
+        container.innerHTML = "<p>No orders yet.</p>";
+        return;
+      }
+  
+      container.innerHTML = orders.map((item, index) => `
+        <div class="cart-card">
+          <img src="${item.image}" alt="${item.name}" />
+          <h3>${item.name}</h3>
+          <p>Price: ₹${item.price}</p>
+          <p>Quantity: ${item.quantity || 1}</p>
+          <p>Status: ✅ Order Placed (COD)</p>
+          <button onclick="cancelOrder(${index})">Cancel Item</button>
+        </div>
+      `).join('');
+    }
+  
+    function cancelOrder(index) {
+      if (confirm("Are you sure you want to cancel this order?")) {
+        orders.splice(index, 1);
+        localStorage.setItem("orders", JSON.stringify(orders));
+        alert("Order canceled.");
+        displayOrders();
+      }
+    }
+  
+    displayOrders();
+  </script>
+  
+</body>
+</html>

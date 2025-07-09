@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UrbanTime</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="logo.webp" alt="Amazon Logo" />
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="UrbanTime" />
+      <button>🔍</button>
+    </div>
+    <div class="nav-items">
+        <a href="signin.html">Sign In</a>
+
+      <a href="#">Orders</a>
+      <a href="cart.html" class="cart-link">Cart 🛒 <span id="cart-count">0</span></a>
+
+
+    </div>
+  </header>
+
+ <!-- Banner Wrapper -->
+<section class="banner-section">
+    <img src="banner.avif" alt="Banner" class="banner-img">
+  
+    <!-- Today's Deals OVER the banner -->
+    <div class="deals-overlay">
+      <h1>UrbanTime</h1>
+      <h2>Featured Collection</h2>
+      <div class="products-grid">
+        <div class="product-card">
+            <img src="w1.avif" alt="Titan Smart Watch">
+            <h3 class="product-name">Titan Smart Watch</h3>
+            <p class="product-price">Price: ₹2,499</p>
+            <button onclick="addToCart('Titan Smart Watch', 2499, 'w1.avif')">Add to Cart</button>
+        </div>
+          
+        <div class="product-card">
+            <img src="w2.avif" alt="Rolex Speaker">
+            <h3 class="product-name">Rolex</h3>
+            <p class="product-price">Price: ₹4,999</p>
+            <button onclick="addToCart('Rolex', 4999, 'w2.avif')">Add to Cart</button>
+          </div>
+  
+          <div class="product-card">
+            <img src="w3.avif" alt="Fastrack Noise Buds">
+            <h3 class="product-name">Fastrack</h3>
+            <p class="product-price">Price: ₹3,999</p>
+            <button onclick="addToCart('Fastrack', 3999, 'w3.avif')">Add to Cart</button>
+          </div>
+  
+          <div class="product-card">
+            <img src="w4.avif" alt="Casio Classic Watch">
+            <h3 class="product-name">Casio Classic Watch</h3>
+            <p class="product-price">Price: ₹1,599</p>
+            <button onclick="addToCart('Casio Classic Watch', 1599, 'w4.avif')">Add to Cart</button>
+          </div>
+          
+      </div>
+    </div>
+  </section>
+  
+<!-- Thank You Banner -->
+<section class="thankyou-banner">
+    <img src="bt.avif" alt="Thank You Banner" />
+  </section>
+  
+  <script src="main.js"></script>
+</body>
+</html>
